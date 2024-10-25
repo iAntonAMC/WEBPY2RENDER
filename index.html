@@ -1,0 +1,40 @@
+$def with(data)
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Personas</title>
+</head>
+<body>
+    <h1>Lista de Personas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            $for persona in data:
+                <tr>
+                    <td>$persona["id_persona"]</td>
+                    <td>$persona["nombre"]</td>
+                    <td>$persona["email"]</td>
+                    <td>$persona["telefono"]</td>
+                </tr>
+        </tbody>
+    </table>
+
+    <form method="POST" action="/">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" required>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" required>
+        <label for="telefono">Telefono</label>
+        <input type="text" name="telefono" id="telefono" required>
+        <button type="submit">Agregar persona</button>
+    </form>
+</body>
+</html>
